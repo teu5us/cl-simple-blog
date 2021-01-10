@@ -7,8 +7,8 @@
   :bug-tracker "https://github.com/Teu5us/cl-simple-blog/issues"
   :source-control (:git "git@github.com:Teu5us/cl-simple-blog.git")
   :depends-on (:lucerne
-               :lucerne
-               :lucerne-auth)
+               :lucerne-auth
+               :cl-pass)
   :components ((:module "assets"
                 :components
                 ((:module "css"
