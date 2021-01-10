@@ -1,15 +1,16 @@
 (in-package :cl-user)
-(defpackage cl-simple-blog
+(defpackage cl-simple-blog.views
   (:use :cl :lucerne)
   (:export :app)
   (:documentation "Main cl-simple-blog code."))
-(in-package :cl-simple-blog)
+(in-package :cl-simple-blog.views)
 (annot:enable-annot-syntax)
 
 ;;; App
 
 (defapp app
-  :middlewares ((clack.middleware.static:<clack-middleware-static>
+  :middlewares (clack.middleware.session:<clack-middleware-session>
+                (clack.middleware.static:<clack-middleware-static>
                  :root (asdf:system-relative-pathname :cl-simple-blog #p"assets/")
                  :path "/static/")))
 
